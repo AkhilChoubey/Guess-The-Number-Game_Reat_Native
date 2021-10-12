@@ -36,6 +36,6 @@ export default Card;
 
 // };
 
-// const styles = StyleSheet()
+// const styles = StyleSheet.create({})
 
 // export default Card;
