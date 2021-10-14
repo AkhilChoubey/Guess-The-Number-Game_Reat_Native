@@ -1,6 +1,5 @@
 import React from "react";
 import {View, Text, StyleSheet, Button} from 'react-native';
-import { Header } from "react-native/Libraries/NewAppScreen";
 import Card from "../components/Card";
 import Input from "../components/Input";
 import Colors from "../constants/color";
