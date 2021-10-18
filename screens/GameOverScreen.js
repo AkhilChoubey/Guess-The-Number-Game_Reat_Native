@@ -1,14 +1,16 @@
 import React from "react";
-import {View, Text, StyleSheet, TextInput, Button} from 'react-native';
-
+import {View, Text, StyleSheet, TextInput, Button, Image} from 'react-native';
+import color from "../constants/color";
 
 const GameOverScreen = props => {
     return <View style={styles.screen}>
-        <Text>
+        <Text style={{fontFamily: 'open-sans-bold', fontSize: 30}}>
             The Game is Over!
         </Text>
-        <Text>Number of rounds : {props.roundsNumber}</Text>
-        <Text>User Number : {props.userNumber} </Text>
+        <View style={styles.imageContainer}>
+        <Image source={require('../assets/success.png')} style={styles.image} />
+        </View>
+        <Text style={styles.resultText}>Number of rounds your phone took to guess the number<Text style={styles.highlightedText}> {props.userNumber}</Text> is <Text style={styles.highlightedText}>{props.roundsNumber}</Text> </Text>
         <Button title='NEW GAME' onPress={props.onRestart} />
     </View>
 
@@ -18,7 +20,34 @@ const styles = StyleSheet.create({
     screen: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+
+    },
+    image:{
+        width: '100%',
+        height: '100%'
+    },
+    imageContainer: {
+        borderRadius: 200,
+        borderWidth: 3,
+        borderColor: 'black',
+        width: '80%',
+        height: 300,
+        overflow: 'hidden',
+        marginVertical: 30
+    },
+    resultText: {
+        textAlign: 'center',
+        marginVertical: 30,
+        fontSize: 18,
+        marginHorizontal: 30
+
+    }
+    ,
+    highlightedText: {
+        fontFamily: 'open-sans-bold',
+        color: color.primary,
+        fontSize: 20
     }
 })
 
