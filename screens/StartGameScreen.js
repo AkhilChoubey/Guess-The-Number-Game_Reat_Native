@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {View, Text, StyleSheet, Button, TouchableWithoutFeedback, Keyboard,Alert} from 'react-native';
 import Card from "../components/Card";
 import Input from "../components/Input";
+import MainButton from "../components/MainButton";
 import NumberContainer from "../components/NumberContainer";
 import Colors from "../constants/color";
 
@@ -41,7 +42,7 @@ const StartGameScreen = props => {
                                 <NumberContainer>
                                     {selectedNumber}
                                 </NumberContainer> 
-                                <Button title="START GAME" onPress={()=> props.onStartGame(selectedNumber)} />
+                                <MainButton  onPress={()=> props.onStartGame(selectedNumber)} >START GAME</MainButton>
                           </Card>
     }
 
@@ -87,10 +88,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         width: '100%',
         justifyContent: 'space-between',
-        paddingHorizontal:15
+        paddingHorizontal: 15,
+    
     },
     button: {
-        width: 100
+        width: 80,
+        borderRadius: 25
     },
     input: {
         width:50,

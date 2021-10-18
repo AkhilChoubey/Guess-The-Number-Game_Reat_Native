@@ -1,5 +1,6 @@
 import React from "react";
 import {View, Text, StyleSheet, TextInput, Button, Image} from 'react-native';
+import MainButton from "../components/MainButton";
 import color from "../constants/color";
 
 const GameOverScreen = props => {
@@ -11,7 +12,7 @@ const GameOverScreen = props => {
         <Image source={require('../assets/success.png')} style={styles.image} />
         </View>
         <Text style={styles.resultText}>Number of rounds your phone took to guess the number<Text style={styles.highlightedText}> {props.userNumber}</Text> is <Text style={styles.highlightedText}>{props.roundsNumber}</Text> </Text>
-        <Button title='NEW GAME' onPress={props.onRestart} />
+        <MainButton onPress={props.onRestart} >NEW GAME</MainButton>
     </View>
 
 };
